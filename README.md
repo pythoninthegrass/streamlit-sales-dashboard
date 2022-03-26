@@ -35,7 +35,7 @@ If you have any feedback, please reach out to me at contact@pythonandvba.com
     poetry run python -m pip install --upgrade pip
     
     # install libraries
-    poetry add plotly pandas streamlit openpyxl
+    poetry install
     
     # activate .venv
     poetry config virtualenvs.in-project true           # .venv in `pwd`
