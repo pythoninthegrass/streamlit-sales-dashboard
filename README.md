@@ -31,6 +31,9 @@ If you have any feedback, please reach out to me at contact@pythonandvba.com
         ```
 * `poetry` setup
     ```bash
+    # configure virtual environment to be in working directory
+    poetry config virtualenvs.in-project true
+    
     # update pip
     poetry run python -m pip install --upgrade pip
     
@@ -38,7 +41,6 @@ If you have any feedback, please reach out to me at contact@pythonandvba.com
     poetry install
     
     # activate .venv
-    poetry config virtualenvs.in-project true           # .venv in `pwd`
     poetry shell
     ```
 * Run the `streamlit` server
