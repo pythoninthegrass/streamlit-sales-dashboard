@@ -21,7 +21,28 @@ If you have any feedback, please reach out to me at contact@pythonandvba.com
 
 ## Addendum
 * Added `asdf` local Python version 3.9.6
-* On Fedora, needs dependencies installed before compiling:
+    * On Fedora, needs dependencies installed before compiling:
+        ```bash
+        sudo dnf install -y bzip2-devel libsqlite3x-devel
+        ```
+    * Install Python
+        ```bash
+        asdf install python 3.9.6
+        ```
+* `poetry` setup
     ```bash
-    sudo dnf install -y bzip2-devel libsqlite3x-devel
+    # update pip
+    poetry run python -m pip install --upgrade pip
+    
+    # install libraries
+    poetry add plotly pandas streamlit openpyxl
+    
+    # activate .venv
+    poetry config virtualenvs.in-project true           # .venv in `pwd`
+    poetry shell
     ```
+* Run the `streamlit` server
+    ```bash
+    streamlit run app.py
+    ```
+    * Navigate to the IP address/localhost and port in a browser (e.g., http://localhost:8501)
