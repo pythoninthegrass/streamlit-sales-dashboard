@@ -43,6 +43,15 @@ If you have any feedback, please reach out to me at contact@pythonandvba.com
     # activate .venv
     poetry shell
     ```
+* Setup `streamlit`
+   ```bash
+   # vim ~/.streamlit/config.toml
+   [browser]
+   gatherUsageStats = false
+   
+   # macOS-only
+   xcode-select --install
+   ```
 * Run the `streamlit` server
     ```bash
     streamlit run app.py
