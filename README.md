@@ -20,11 +20,15 @@ If you have any feedback, please reach out to me at contact@pythonandvba.com
 ![Logo](https://content.screencast.com/users/jubbel3/folders/Snagit/media/c42ea34b-4057-4754-96b0-e8e05c866afb/08.18.2021-19.56.png)
 
 ## Addendum
+### Linux
+* On [Fedora Linux](https://getfedora.org/), install dependencies before compiling:
+     ```bash
+     sudo dnf install -y bzip2-devel libsqlite3x-devel
+     ```
+### macOS
+* Install Xcode CLI tools via `xcode-select --install`
+### Both Linux and macOS
 * Added `asdf` local Python version 3.9.6
-    * On Fedora, needs dependencies installed before compiling:
-        ```bash
-        sudo dnf install -y bzip2-devel libsqlite3x-devel
-        ```
     * Install Python
         ```bash
         asdf install python 3.9.6
@@ -43,14 +47,29 @@ If you have any feedback, please reach out to me at contact@pythonandvba.com
     # activate .venv
     poetry shell
     ```
+* **Note**
+   * If `poetry shell` doesn't select Python 3.9.6, manually create a virtual environment (venv) in the top-level repo directory
+      ```bash
+      # check python version matches v3.9.6
+      python --version
+
+      # remove incorrect environment (if present)
+      rm -rf .venv
+
+      # create a new venv with v3.9.6
+      python3 -m venv .venv
+
+      # reinstall dependencies
+      poetry install
+
+      # activate (instead of `poetry shell`)
+      source .venv/bin/activate
+      ```
 * Setup `streamlit`
    ```bash
    # vim ~/.streamlit/config.toml
    [browser]
    gatherUsageStats = false
-   
-   # macOS-only
-   xcode-select --install
    ```
 * Run the `streamlit` server
     ```bash
