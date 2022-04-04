@@ -47,7 +47,7 @@ If you have any feedback, please reach out to me at contact@pythonandvba.com
     # activate .venv
     poetry shell
     ```
-* **Note**
+* **Troubleshooting Note**
    * If `poetry shell` doesn't select Python 3.9.6, manually create a virtual environment (venv) in the top-level repo directory
       ```bash
       # check python version matches v3.9.6
